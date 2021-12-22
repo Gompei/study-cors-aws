@@ -1,4 +1,4 @@
-# github-actions-oidc-aws
+# study-cors-aws
 
 ## 概要
 
