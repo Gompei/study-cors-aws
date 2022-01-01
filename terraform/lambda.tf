@@ -12,7 +12,6 @@ resource "aws_lambda_function" "lambda_function" {
   memory_size      = 128
   timeout          = 3
 }
-
 resource "aws_iam_role" "lambda_iam_role" {
   name                = "${var.project_name}-lmabda-role"
   assume_role_policy  = data.aws_iam_policy_document.lambda_assume_role.json

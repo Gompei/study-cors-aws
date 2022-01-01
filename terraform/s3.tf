@@ -1,3 +1,6 @@
+########################################################
+# S3 Bucket
+########################################################
 resource "aws_s3_bucket" "s3_bucket" {
   bucket = "example-${var.project_name}"
   acl    = "private"
@@ -7,12 +10,10 @@ resource "aws_s3_bucket" "s3_bucket" {
     error_document = "index.html"
   }
 }
-
 resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.s3_bucket.id
   policy = data.aws_iam_policy_document.iam_policy.json
 }
-
 data "aws_iam_policy_document" "iam_policy" {
   statement {
     sid    = "Allow All User"
